@@ -3,10 +3,13 @@ This is a tutorial to teach how to create a simple, secure and robust nodejs ser
 **Full details on how to build out this server is found [here](https://dev.to/ebereplenty/setting-up-a-simple-secure-and-robust-node-js-server-10n0)**.
 
 ## Dependences
-- NPM
-- NODE JS
-- EXPRESS
-- NODEMON
+- [Express](https://www.npmjs.com/package/express)
+- [Cloudinary](https://cloudinary.com/)
+- [Node](http://nodejs.org/)
+- [NPM](https://www.npmjs.com/)
+- [DotENV](https://www.npmjs.com/package/dotenv)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+
 
 ## SETTING UP 
 - Fork this repository
