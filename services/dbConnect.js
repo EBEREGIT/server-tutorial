@@ -20,7 +20,8 @@ const createTables = () => {
     images(
       id SERIAL PRIMARY KEY,
       title VARCHAR(128) NOT NULL,
-      cloudinary_id VARCHAR(128) NOT NULL
+      cloudinary_id VARCHAR(128) NOT NULL,
+      image_url VARCHAR(128) NOT NULL
     )`;
   pool
     .query(imageTable)
