@@ -95,11 +95,11 @@ app.post("/persist-image", (request, response) => {
       });
     });
 });
-
+// retrieve image
 app.get("/retrieve-image/:cloudinary_id", (request, response) => {
   // data from user
   const { cloudinary_id } = request.params;
-  
+
   db.pool.connect((err, client) => {
     // query to find image
     const query = "SELECT * FROM images WHERE cloudinary_id = $1";
@@ -130,4 +130,45 @@ app.get("/retrieve-image/:cloudinary_id", (request, response) => {
   });
 });
 
+// delete image
+app.delete("/delete-image/:cloudinary_id", (request, response) => {
+  // unique ID
+  const { cloudinary_id } = request.params;
+
+  // delete image from cloudinary first
+  cloudinary.uploader
+    .destroy(cloudinary_id)
+
+    // delete image record from postgres also
+    .then((result) => {
+      db.pool.connect((err, client) => {
+     
+      // delete query
+      const deleteQuery = "DELETE FROM images WHERE cloudinary_id = $1";
+      const deleteValue = [cloudinary_id];
+
+      // execute delete query
+      client
+        .query(deleteQuery, deleteValue)
+        .then((deleteResult) => {
+          response.status(200).send({
+            message: "Image Deleted Successfully!",
+            deleteResult,
+          });
+        })
+        .catch((e) => {
+          response.status(500).send({
+            message: "Image Couldn't be Deleted!",
+            e,
+          });
+        });
+      })
+    })
+    .catch((error) => {
+      response.status(500).send({
+        message: "Failure",
+        error,
+      });
+    });
+});
 module.exports = app;
