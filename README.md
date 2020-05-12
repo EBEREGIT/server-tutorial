@@ -5,7 +5,10 @@ This is a tutorial was to teach how to create a simple, secure and robust nodejs
 
 **Full details on how to upload images to cloudinary using nodejs is found [here](https://dev.to/ebereplenty/image-upload-to-cloudinary-with-nodejs-and-dotenv-4fen)**.
 
-**Full details on how to persist and retrieve images to cloudinary using nodejs and postgres is found [here]()**.
+**Full details on how to persist and retrieve images to cloudinary using nodejs and postgres is found [here](https://dev.to/ebereplenty/cloudinary-and-postgresql-persisting-and-retrieving-images-using-nodejs-31b2)**.
+
+
+**Full details on how to delete and update images to cloudinary using nodejs and postgres is found [here]()**.
 
 ## Dependences
 - [Express](https://www.npmjs.com/package/express)
