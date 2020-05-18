@@ -19,7 +19,7 @@ router.get("/", (request, response, next) => {
 });
 
 // image upload API
-router.post("image-upload", (request, response) => {
+router.post("/image-upload", (request, response) => {
   // collected image from a user
   const data = {
     image: request.body.image,
