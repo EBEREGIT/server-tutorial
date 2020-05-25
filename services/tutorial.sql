@@ -5,7 +5,7 @@
 -- Dumped from database version 12.1
 -- Dumped by pg_dump version 12.1
 
--- Started on 2020-05-25 14:27:49
+-- Started on 2020-05-25 19:37:09
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -77,7 +77,7 @@ ALTER TABLE ONLY public.images ALTER COLUMN id SET DEFAULT nextval('public.image
 --
 
 COPY public.images (id, title, cloudinary_id, image_url) FROM stdin;
-3	Updated Image	yhzoolmc7o131ylh4nsq	https://res.cloudinary.com/dunksyqjj/image/upload/v1589211420/yhzoolmc7o131ylh4nsq.jpg
+8	Heroku Image	ywdrgacv79cg18ap0w7l	https://res.cloudinary.com/dunksyqjj/image/upload/v1590431624/ywdrgacv79cg18ap0w7l.jpg
 \.
 
 
@@ -87,7 +87,7 @@ COPY public.images (id, title, cloudinary_id, image_url) FROM stdin;
 -- Name: images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tutorial
 --
 
-SELECT pg_catalog.setval('public.images_id_seq', 7, true);
+SELECT pg_catalog.setval('public.images_id_seq', 8, true);
 
 
 --
@@ -99,7 +99,7 @@ ALTER TABLE ONLY public.images
     ADD CONSTRAINT images_pkey PRIMARY KEY (id);
 
 
--- Completed on 2020-05-25 14:27:50
+-- Completed on 2020-05-25 19:37:11
 
 --
 -- PostgreSQL database dump complete
