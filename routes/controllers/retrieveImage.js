@@ -6,12 +6,12 @@ exports.retrieveImage = (request, response) => {
   
     db.pool.connect((err, client) => {
       // query to find image
-      const query = "SELECT * FROM images WHERE cloudinary_id = $1";
+      const retrieveQuery = "SELECT * FROM images WHERE cloudinary_id = $1";
       const value = [cloudinary_id];
   
       // execute query
       client
-        .query(query, value)
+        .query(retrieveQuery, value)
         .then((output) => {
           response.status(200).send({
             status: "success",
