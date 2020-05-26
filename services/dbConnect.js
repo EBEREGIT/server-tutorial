@@ -5,7 +5,7 @@ require('dotenv').config();
 const isProduction = process.env.NODE_ENV === 'production';
 
 // configuration details
-const connectionString = `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}?ssl = true`;
+const connectionString = `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`;
 
 // if project has been deployed, connect with the host's DATABASE_URL
 // else connect with the local DATABASE_URL
@@ -13,8 +13,6 @@ const pool = new pg.Pool({
   connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
   ssl: isProduction,
 });
-
-console.log(process.env.DATABASE_URL)
 
 // display message on success message if successful
 pool.on('connect', () => {
