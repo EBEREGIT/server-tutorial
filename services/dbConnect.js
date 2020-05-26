@@ -14,6 +14,8 @@ const pool = new pg.Pool({
   ssl: isProduction,
 });
 
+console.log(process.env.DATABASE_URL)
+
 // display message on success message if successful
 pool.on('connect', () => {
   console.log('Teamwork Database connected successfully!');
